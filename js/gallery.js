@@ -80,12 +80,11 @@ alt="${description}"/>
 const galleryItemString = arrayGalleryItem.join('');
 gallery.insertAdjacentHTML("beforeend", galleryItemString);
 
-const image = document.querySelector('.gallery-image');
 gallery.addEventListener('click', handleClick);
 
 function handleClick(event) {
     event.preventDefault();
-    if (!event.target.classList.contains('gallery-image')) {
+    if (event.target.nodeName !== 'IMG') {
         return;
     } 
     const largeImageUrl = event.target.getAttribute('data-source');
