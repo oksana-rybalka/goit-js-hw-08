@@ -3,14 +3,14 @@
     flex-wrap: wrap;
     gap: 24px;
     list-style: none;
-    padding: 100px 156px;
+    padding: 24px 156px;
     margin: 0;
 }
 
 .gallery-item {
     width: calc((100% - 24px * 2) / 3);
     box-sizing: border-box;
-    background: url("path_to_image");
+
 }
 
 .gallery-image {
@@ -18,4 +18,9 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
+
+}
+.gallery-image:hover {
+    transform: scale(1.1);
+    transition: 0.25s;
 }

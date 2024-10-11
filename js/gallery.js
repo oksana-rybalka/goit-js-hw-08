@@ -79,3 +79,20 @@ alt="${description}"/>
 </li>`);
 const galleryItemString = arrayGalleryItem.join('');
 gallery.insertAdjacentHTML("beforeend", galleryItemString);
+
+const image = document.querySelector('.gallery-image');
+gallery.addEventListener('click', handleClick);
+
+function handleClick(event) {
+    event.preventDefault();
+    if (!event.target.classList.contains('gallery-image')) {
+        return;
+    } 
+    const largeImageUrl = event.target.getAttribute('data-source');
+    const instance = basicLightbox.create(`<div class="modal">
+        <img src="${largeImageUrl}" width="1112" height="640">
+        </div>`)
+    
+    instance.show()
+}
+
